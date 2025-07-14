@@ -42,7 +42,7 @@ END
 
 3. Actualizar Trabajador
    - Mediante un modal con envio de datos con AJAX
-   - - Validación de campos antes de enviar datos
+   - Validación de campos antes de enviar datos
 
 4. Eliminar Trabajador
    - Se muestra un mensaje de validación antes de eliminar al trabajador
