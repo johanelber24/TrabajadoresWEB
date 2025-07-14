@@ -1,0 +1,233 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Personalizado */
+#preloader {
+    background-color: #0f1520;
+    width: 100%;
+    height: 100vh;
+    z-index: 999999;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    overflow: hidden;
+    -webkit-transition: opacity 1200ms ease-out;
+    transition: opacity 1200ms ease-out;
+    animation: fade-out 1200ms forwards;
+}
+
+#preloader .preloader__master {
+    text-align: center;
+    width: 100%;
+}
+
+#preloader .loader {
+    display: inline-block;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    -webkit-animation: loader 500ms linear infinite;
+    animation: loader 500ms linear infinite;
+}
+
+/* ANIMACION */
+@keyframes loader {
+    0% {
+        background: #22c7c4;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+
+    100% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        background: #123e50;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#preloader.hide {
+    display: none;
+}
+
+.logo-size {
+    width: 160px;
+    height: 100%;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #054261;
+    font-weight: 500;
+}
+
+.banner {
+    position: relative;
+    background-image: url('../img/banner.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.banner::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.5);
+    z-index: 2;
+}
+
+.banner-info {
+    position: relative;
+    z-index: 3;
+}
+
+.btn-show-trabajadores {
+    background-color: #00B1FE;
+    color: #FFFFFF;
+}
+
+.btn-show-trabajadores:hover {
+    color: #FFFFFF;
+    filter: grayscale(20%);
+}
+
+.title-myper {
+    color: #00B1FE;
+}
+
+.nosotros > p {
+    color: #054261;
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto 20px auto;
+}
+
+.title-trabajadores {
+    color: #054261;
+}
+.table-myper-head {
+    background-color: #054261;
+    color: #FFFFFF;
+}
+
+.btn-new {
+    background-color: #00B1FE;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.btn-new:hover {
+    color: #FFFFFF;
+    filter: grayscale(50%);
+}
+
+
+.btn-edit {
+    background-color: #EF8A17;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.btn-edit:hover {
+    color: #FFFFFF;
+    filter: grayscale(20%);
+}
+
+.btn-delete {
+    background-color: #931621;
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.btn-delete:hover {
+    color: #FFFFFF;
+    filter: grayscale(20%);
+}
+
+.footer {
+    position: relative;
+    background-color: #14318C;
+}
+
+.footer-text {
+    color: #FFFFFF;
+    margin-bottom: 0;
+    font-weight: 500;
+}
+
+/* Modales */
+.bg-myper {
+    background-color: #00B1FE;
+}
+
+.btn-guardar {
+    background-color: #6aa218;
+    color: #FFFFFF;
+}
+
+.btn-guardar:hover {
+    filter: grayscale(20%);
+    color: #FFFFFF;
+}
+
+.btn-cancelar {
+    background-color: #931621;
+    color: #FFFFFF;
+}
+
+.btn-cancelar:hover {
+    filter: grayscale(20%);
+    color: #FFFFFF;
+}
+
+.bg-men {
+    background-color: #20b5c1;
+}
+
+.bg-women {
+    background-color: #f3a81c;
+}

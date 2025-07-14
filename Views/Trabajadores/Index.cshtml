@@ -1,0 +1,121 @@
+﻿@model IEnumerable<TrabajadoresWEB.Models.TrabajadorViewModel>
+
+@{
+    ViewData["Title"] = "Trabajadores";
+}
+
+<div class="container">
+    <h1 class="text-center mt-4 title-trabajadores fw-bold">Listado de Trabajadores</h1>
+
+    <div class="mt-2">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modalTrabajadores" class="btn btn-new btnNuevo mb-3 fw-bold"><i class="fa-solid fa-plus"></i> Nuevo Registro</a>
+    </div>
+
+    <div class="modal fade" id="modalTrabajadores" tabindex="-1" aria-labelledby="modalTrabajadores" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="formTrabajador" asp-action="Create" method="post" class="needs-validation" novalidate>
+                    <div class="modal-header bg-myper text-white">
+                        <h5 class="modal-title" id="modalTrabajadorTitle">Registrar Trabajador</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                    </div>
+                    <div class="modal-body row g-3 px-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Tipo Documento</label>
+                            <select id="TipoDocumento" name="TipoDocumento" class="form-select">
+                                <option value="DNI">DNI</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Debe completar el campo!
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Nro Documento</label>
+                            <input id="NumeroDocumento" name="NumeroDocumento" class="form-control" required maxlength="8" />
+                            <div class="invalid-feedback">
+                                Debe completar el campo!
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Nombres</label>
+                            <input id="Nombres" name="Nombres" class="form-control" required />
+                            <div class="invalid-feedback">
+                                Debe completar el campo!
+                            </div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Sexo</label><br />
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Sexo" value="M" checked />
+                                <label class="form-check-label">Masculino</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Sexo" value="F" />
+                                <label class="form-check-label">Femenino</label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Departamento</label>
+                            <select id="selectDepartamento" name="IdDepartamento" class="form-select" required></select>
+                            <div class="invalid-feedback">
+                                Debe completar el campo!
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Provincia</label>
+                            <select id="selectProvincia" name="IdProvincia" class="form-select" required></select>
+                            <div class="invalid-feedback">
+                                Debe completar el campo!
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="form-label">Distrito</label>
+                            <select id="selectDistrito" name="IdDistrito" class="form-select" required></select>
+                            <div class="invalid-feedback">
+                                Debe completar el campo!
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-guardar btnSubmit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                        <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal"><i class="fa-solid fa-xmark"></i> Cancelar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="filtroSexo">Filtrar por Sexo:</label>
+        <select id="filtroSexo" class="form-select form-select-sm" style="width: 200px;">
+            <option value="">-- Todos --</option>
+            <option value="M">Masculino</option>
+            <option value="F">Femenino</option>
+        </select>
+    </div>
+
+    <table class="table table-bordered text-center" id="tablaTrabajadores">
+        <thead class="table-myper-head">
+            <tr>
+                <th>Tipo Documento</th>
+                <th>Nro Documento</th>
+                <th>Nombres</th>
+                <th>Sexo</th>
+                <th>Departamento</th>
+                <th>Provincia</th>
+                <th>Distrito</th>
+                <th>Acción</th>
+            </tr>
+        </thead>
+        <tbody id="listarTrabajadores">
+        </tbody>
+    </table>
+
+</div>
